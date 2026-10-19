@@ -9,6 +9,7 @@ same path, so pass the Mac path explicitly there.
 |---|---|
 | `frag-common.config`, `frag-arm64.config`, `frag-x86_64.config` | the smallest 6.18 configuration that boots under QEMU with sched_ext, BTF and lockdown: `allnoconfig` + these fragments |
 | `build-kernel.sh ARCH` | builds linux-6.18.57 from `~/k/linux-6.18.57` (in colima) with LLVM, copies `Image`/`bzImage`, the `.config` and the vmlinux BTF into `$VHL_S1` |
+| `build-kernel-fat.sh` | the configure step of `.github/workflows/kernel-fat.yml` (the Void `linux6.18` x86_64 dotconfig at a pinned void-packages commit + sched_ext, BTF, virtio), bzImage only, into `$VHL_S1/{bzImage,config}-fat-6.18.57` and `vmlinux-fat-6.18.57.btf`; for when the workflow cannot be dispatched. With 4 GB in colima, pahole is OOM-killed at the BTF step without swap (a temporary 6 GB swapfile was enough) |
 | `prep.sh` | toolchain versions, the 6.18 uapi headers, `uapi_sizes.c` -> the numbers `zig/lib/bpf_uapi.zig` asserts, the 6.8 BTF ids of the colima kernel |
 | `uapi_sizes.c`, `uapi-sizes-6.18.57.txt` | the offsets and constants of the 6.18 `union bpf_attr`, measured |
 | `mkinitrd.py DIR OUT.gz` | a newc cpio initramfs, gzip-compressed |
@@ -28,6 +29,11 @@ colima ssh -- env VHL_S1=/Users/$USER/.cache/vhl-s1 /Users/$USER/Documents/syste
 (cd sched && zig build -Dtarget=aarch64-linux --prefix ~/.cache/vhl-s1/out-arm64 && zig build -Dtarget=x86_64-linux --prefix ~/.cache/vhl-s1/out-x86_64)
 # the VMs
 sched/test/run-vm.sh arm64
+sched/test/run-vm.sh x86_64
+# the same with the kernel-fat configuration (about 10 minutes to build on 4 cores): keep the small kernel, boot the fat one
+colima ssh -- env VHL_S1=/Users/$USER/.cache/vhl-s1 /Users/$USER/Documents/systems/void-hardperf-light/sched/test/build-kernel-fat.sh
+cp ~/.cache/vhl-s1/bzImage-x86_64-6.18.57 ~/.cache/vhl-s1/bzImage-small-x86_64-6.18.57
+cp ~/.cache/vhl-s1/bzImage-fat-6.18.57 ~/.cache/vhl-s1/bzImage-x86_64-6.18.57
 sched/test/run-vm.sh x86_64
 # the loader mechanics without sched_ext (colima, 6.8)
 colima ssh -- sudo env VHL_S1=/Users/$USER/.cache/vhl-s1 /Users/$USER/Documents/systems/void-hardperf-light/sched/test/test-colima.sh
