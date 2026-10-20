@@ -1,0 +1,873 @@
+[    0.000000] Linux version 6.18.57_1 (vh@colima) (Ubuntu clang version 18.1.3 (1ubuntu1), Ubuntu LLD 18.1.3) #2 SMP PREEMPT_DYNAMIC Mon Oct 19 13:03:50 CEST 2026
+[    0.000000] Command line: console=ttyS0 lockdown=confidentiality 
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x000000003ffdf000-0x000000003fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fed1c000-0x00000000fed1ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] Kernel is locked down from command line; see man kernel_lockdown.7
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+[    0.000000] DMI: Memory slots populated: 1/1
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 999.997 MHz processor
+[    0.011305] last_pfn = 0x3ffdf max_arch_pfn = 0x10000000000
+[    0.011952] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.012184] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.032964] found SMP MP-table at [mem 0x000f54c0-0x000f54cf]
+[    0.034742] Using GB pages for direct mapping
+[    0.038518] RAMDISK: [mem 0x3ff0b000-0x3ffcffff]
+[    0.038925] ACPI: Early table checksum verification disabled
+[    0.039383] ACPI: RSDP 0x00000000000F52E0 000014 (v00 BOCHS )
+[    0.039737] ACPI: RSDT 0x000000003FFE245C 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040293] ACPI: FACP 0x000000003FFE223C 0000F4 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040738] ACPI: DSDT 0x000000003FFE0040 0021FC (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040804] ACPI: FACS 0x000000003FFE0000 000040
+[    0.040844] ACPI: APIC 0x000000003FFE2330 000090 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040865] ACPI: HPET 0x000000003FFE23C0 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040884] ACPI: MCFG 0x000000003FFE23F8 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040903] ACPI: WAET 0x000000003FFE2434 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.040966] ACPI: Reserving FACP table memory at [mem 0x3ffe223c-0x3ffe232f]
+[    0.040989] ACPI: Reserving DSDT table memory at [mem 0x3ffe0040-0x3ffe223b]
+[    0.040995] ACPI: Reserving FACS table memory at [mem 0x3ffe0000-0x3ffe003f]
+[    0.041001] ACPI: Reserving APIC table memory at [mem 0x3ffe2330-0x3ffe23bf]
+[    0.041007] ACPI: Reserving HPET table memory at [mem 0x3ffe23c0-0x3ffe23f7]
+[    0.041013] ACPI: Reserving MCFG table memory at [mem 0x3ffe23f8-0x3ffe2433]
+[    0.041018] ACPI: Reserving WAET table memory at [mem 0x3ffe2434-0x3ffe245b]
+[    0.042974] No NUMA configuration found
+[    0.042989] Faking a node at [mem 0x0000000000000000-0x000000003ffdefff]
+[    0.043614] NODE_DATA(0) allocated [mem 0x3ffd9a80-0x3ffdefff]
+[    0.046593] Zone ranges:
+[    0.046605]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.046702]   DMA32    [mem 0x0000000001000000-0x000000003ffdefff]
+[    0.046711]   Normal   empty
+[    0.046723]   Device   empty
+[    0.046734] Movable zone start for each node
+[    0.046759] Early memory node ranges
+[    0.046791]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.046970]   node   0: [mem 0x0000000000100000-0x000000003ffdefff]
+[    0.047099] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdefff]
+[    0.048307] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.048649] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.078038] On node 0, zone DMA32: 33 pages in unavailable ranges
+[    0.078720] ACPI: PM-Timer IO Port: 0x608
+[    0.079260] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.079704] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+[    0.079808] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.080050] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.080082] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.080179] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.080189] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.080380] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.080413] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.080792] CPU topo: Max. logical packages:   1
+[    0.080805] CPU topo: Max. logical dies:       1
+[    0.080813] CPU topo: Max. dies per package:   1
+[    0.080882] CPU topo: Max. threads per core:   1
+[    0.081065] CPU topo: Num. cores per package:     4
+[    0.081078] CPU topo: Num. threads per package:   4
+[    0.081086] CPU topo: Allowing 4 present CPUs plus 0 hotplug CPUs
+[    0.081873] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.081900] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.082019] [mem 0x40000000-0xafffffff] available for PCI devices
+[    0.082088] Booting paravirtualized kernel on bare hardware
+[    0.082398] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.091277] setup_percpu: NR_CPUS:256 nr_cpumask_bits:4 nr_cpu_ids:4 nr_node_ids:1
+[    0.092653] percpu: Embedded 62 pages/cpu s217088 r8192 d28672 u524288
+[    0.093726] Kernel command line: console=ttyS0 lockdown=confidentiality 
+[    0.095291] random: crng init done
+[    0.095401] printk: log buffer data + meta data: 524288 + 1835008 = 2359296 bytes
+[    0.095834] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.096033] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.099563] Fallback order for Node 0: 0 
+[    0.099779] Built 1 zonelists, mobility grouping on.  Total pages: 262013
+[    0.099797] Policy zone: DMA32
+[    0.100810] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.131269] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.139379] ftrace: allocating 51940 entries in 204 pages
+[    0.139437] ftrace: allocated 204 pages with 4 groups
+[    0.139680] Lockdown: swapper: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.139737] Tracing disabled due to lockdown
+[    0.150421] Dynamic Preempt: voluntary
+[    0.153479] rcu: Preemptible hierarchical RCU implementation.
+[    0.153505] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.
+[    0.153621] 	Trampoline variant of Tasks RCU enabled.
+[    0.153629] 	Rude variant of Tasks RCU enabled.
+[    0.153635] 	Tracing variant of Tasks RCU enabled.
+[    0.153732] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.153754] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.155130] RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+[    0.155154] RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+[    0.155166] RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+[    0.167034] NR_IRQS: 16640, nr_irqs: 456, preallocated irqs: 16
+[    0.177135] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.177797] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.183129] kfence: initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    0.188755] Console: colour VGA+ 80x25
+[    0.190677] printk: legacy console [ttyS0] enabled
+[    0.214813] ACPI: Core revision 20250807
+[    0.219606] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.221765] APIC: Switch to symmetric I/O mode setup
+[    0.225613] x2apic: IRQ remapping doesn't support X2APIC mode
+[    0.230209] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.237827] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x1cd4289f935, max_idle_ns: 881590538292 ns
+[    0.238499] Calibrating delay loop (skipped), value calculated using timer frequency.. 1999.99 BogoMIPS (lpj=999997)
+[    0.242364] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    0.248045] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.248241] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.249241] mitigations: Enabled attack vectors: user_kernel, user_user, guest_host, guest_guest, SMT mitigations: auto
+[    0.249811] Speculative Store Bypass: Vulnerable
+[    0.250241] Spectre V2 : Mitigation: Retpolines
+[    0.250241] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.250386] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    0.254241] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.256241] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.256241] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.256267] x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+[    0.256465] x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+[    0.256661] x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
+[    0.256996] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.257241] x86/fpu: xstate_offset[3]:  960, xstate_sizes[3]:   64
+[    0.257241] x86/fpu: xstate_offset[4]: 1024, xstate_sizes[4]:   64
+[    0.257241] x86/fpu: xstate_offset[9]: 2688, xstate_sizes[9]:    8
+[    0.257275] x86/fpu: Enabled xstate features 0x21f, context size is 2696 bytes, using 'standard' format.
+[    0.409241] Freeing SMP alternatives memory: 52K
+[    0.410026] pid_max: default: 32768 minimum: 301
+[    0.415465] LSM: initializing lsm=lockdown,capability,landlock,yama
+[    0.417178] landlock: Up and running.
+[    0.417241] Yama: becoming mindful.
+[    0.418971] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.419241] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.509241] smpboot: CPU0: AMD QEMU TCG CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+[    0.518267] Performance Events: PMU not available due to virtualization, using software events only.
+[    0.519241] signal: max sigframe size: 3632
+[    0.520241] rcu: Hierarchical SRCU implementation.
+[    0.520241] rcu: 	Max phase no-delay instances is 400.
+[    0.521338] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    0.525241] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.528241] smp: Bringing up secondary CPUs ...
+[    0.532184] smpboot: x86: Booting SMP configuration:
+[    0.532241] .... node  #0, CPUs:      #1 #2 #3
+[    0.747418] smp: Brought up 1 node, 4 CPUs
+[    0.747844] smpboot: Total of 4 processors activated (11146.23 BogoMIPS)
+[    0.753981] Memory: 968764K/1048052K available (18357K kernel code, 3746K rwdata, 13784K rodata, 3636K init, 3680K bss, 73972K reserved, 0K cma-reserved)
+[    0.760241] devtmpfs: initialized
+[    0.763241] x86/mm: Memory block size: 128MB
+[    0.770522] posixtimers hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.771928] futex hash table entries: 1024 (65536 bytes on 1 NUMA nodes, total 64 KiB, linear).
+[    0.772241] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.772241] Can not register tracer wakeup due to lockdown
+[    0.772241] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.772241] Can not register tracer function_graph due to lockdown
+[    0.775241] pinctrl core: initialized pinctrl subsystem
+[    0.779241] PM: RTC time: 11:05:13, date: 2026-10-19
+[    0.793528] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.795508] DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+[    0.796241] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.797601] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.797988] audit: initializing netlink subsys (disabled)
+[    0.799508] audit: type=2000 audit(1792407913.571:1): state=initialized audit_enabled=0 res=1
+[    0.802929] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.802972] thermal_sys: Registered thermal governor 'step_wise'
+[    0.803142] thermal_sys: Registered thermal governor 'user_space'
+[    0.803241] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.803395] cpuidle: using governor ladder
+[    0.803675] cpuidle: using governor menu
+[    0.805183] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.807241] PCI: ECAM [mem 0xb0000000-0xbfffffff] (base 0xb0000000) for domain 0000 [bus 00-ff]
+[    0.807241] PCI: ECAM [mem 0xb0000000-0xbfffffff] reserved as E820 entry
+[    0.809241] PCI: Using configuration type 1 for base access
+[    0.809241] mtrr: your CPUs had inconsistent fixed MTRR settings
+[    0.809241] mtrr: your CPUs had inconsistent variable MTRR settings
+[    0.809241] mtrr: your CPUs had inconsistent MTRRdefType settings
+[    0.809241] mtrr: probably your BIOS does not setup all CPUs.
+[    0.809241] mtrr: corrected configuration.
+[    0.811241] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.815323] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.815553] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.815755] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.815930] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.829941] ACPI: Added _OSI(Module Device)
+[    0.830130] ACPI: Added _OSI(Processor Device)
+[    0.830241] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.841656] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    0.913175] ACPI: Interpreter enabled
+[    0.913857] ACPI: PM: (supports S0 S3 S4 S5)
+[    0.914015] ACPI: Using IOAPIC for interrupt routing
+[    0.917241] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.917241] PCI: Using E820 reservations for host bridge windows
+[    0.918638] ACPI: Enabled 2 GPEs in block 00 to 3F
+[    0.938413] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.939179] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI HPX-Type3]
+[    0.940966] acpi PNP0A08:00: _OSC: platform does not support [PCIeHotplug LTR]
+[    0.941241] acpi PNP0A08:00: _OSC: OS now controls [SHPCHotplug PME AER PCIeCapability]
+[    0.944583] PCI host bridge to bus 0000:00
+[    0.944964] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.945217] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.945241] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.945241] pci_bus 0000:00: root bus resource [mem 0x40000000-0xafffffff window]
+[    0.945258] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.945461] pci_bus 0000:00: root bus resource [mem 0x100000000-0x8ffffffff window]
+[    0.945792] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.946993] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000 conventional PCI endpoint
+[    0.950122] pci 0000:00:01.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[    0.950241] pci 0000:00:01.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    0.950241] pci 0000:00:01.0: BAR 2 [mem 0xfebd4000-0xfebd4fff]
+[    0.950241] pci 0000:00:01.0: ROM [mem 0xfebc0000-0xfebcffff pref]
+[    0.950241] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.952230] pci 0000:00:02.0: [8086:10d3] type 00 class 0x020000 PCIe Root Complex Integrated Endpoint
+[    0.952241] pci 0000:00:02.0: BAR 0 [mem 0xfeb80000-0xfeb9ffff]
+[    0.952241] pci 0000:00:02.0: BAR 1 [mem 0xfeba0000-0xfebbffff]
+[    0.952241] pci 0000:00:02.0: BAR 2 [io  0xc040-0xc05f]
+[    0.952241] pci 0000:00:02.0: BAR 3 [mem 0xfebd0000-0xfebd3fff]
+[    0.952241] pci 0000:00:02.0: ROM [mem 0xfeb40000-0xfeb7ffff pref]
+[    0.952468] pci 0000:00:02.0: enabling Extended Tags
+[    0.954889] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100 conventional PCI endpoint
+[    0.955241] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    0.955241] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601 conventional PCI endpoint
+[    0.956271] pci 0000:00:1f.2: BAR 4 [io  0xc060-0xc07f]
+[    0.956444] pci 0000:00:1f.2: BAR 5 [mem 0xfebd5000-0xfebd5fff]
+[    0.957241] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500 conventional PCI endpoint
+[    0.957794] pci 0000:00:1f.3: BAR 4 [io  0x0700-0x073f]
+[    0.962241] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    0.962241] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.962241] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    0.962241] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.963629] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
+[    0.964161] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
+[    0.964457] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
+[    0.965039] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
+[    0.965275] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
+[    0.965550] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
+[    0.965851] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
+[    0.966183] ACPI: PCI: Interrupt link GSID configured for IRQ 19
+[    0.966241] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
+[    0.966333] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
+[    0.966566] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
+[    0.966798] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
+[    0.969864] iommu: Default domain type: Translated
+[    0.970025] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.971685] pps_core: LinuxPPS API ver. 1 registered
+[    0.971838] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.972125] PTP clock support registered
+[    0.972241] EDAC MC: Ver: 3.0.0
+[    0.981241] NetLabel: Initializing
+[    0.981241] NetLabel:  domain hash size = 128
+[    0.981241] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.981652] NetLabel:  unlabeled traffic allowed by default
+[    0.981816] mctp: management component transport protocol core
+[    0.981972] NET: Registered PF_MCTP protocol family
+[    0.982241] PCI: Using ACPI for IRQ routing
+[    0.989815] pci 0000:00:01.0: vgaarb: setting as boot VGA device
+[    0.990020] pci 0000:00:01.0: vgaarb: bridge control possible
+[    0.990211] pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.990241] vgaarb: loaded
+[    0.990813] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.991035] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.994241] clocksource: Switched to clocksource tsc-early
+[    0.994241] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.994241] Tracing disabled due to lockdown
+[    0.994241] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.994340] Tracing disabled due to lockdown
+[    0.994466] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.994467] Tracing disabled due to lockdown
+[    0.994467] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.995089] Tracing disabled due to lockdown
+[    0.995216] Could not create tracefs 'synthetic_events' entry
+[    0.995509] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    0.995750] Could not create tracefs 'user_events_data' entry
+[    0.995916] user_events could not register with tracefs
+[    1.005964] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    1.006227] Tracing disabled due to lockdown
+[    1.006376] Lockdown: swapper/0: use of tracefs is restricted; see man kernel_lockdown.7
+[    1.006622] Tracing disabled due to lockdown
+[    1.006769] Tracing disabled due to lockdown
+[    1.010318] VFS: Disk quotas dquot_6.6.0
+[    1.010609] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.014062] pnp: PnP ACPI init
+[    1.016983] ACPI: IRQ 4 override to edge(!), high(!)
+[    1.018434] system 00:04: [mem 0xb0000000-0xbfffffff window] has been reserved
+[    1.020876] pnp: PnP ACPI: found 5 devices
+[    1.057272] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    1.059145] NET: Registered PF_INET protocol family
+[    1.061377] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.206670] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    1.207762] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.212310] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.213047] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    1.213778] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.217310] MPTCP token hash table entries: 1024 (order: 3, 24576 bytes, linear)
+[    1.217599] UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.218400] UDP-Lite hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.220187] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.220647] NET: Registered PF_XDP protocol family
+[    1.221834] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    1.222031] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    1.222166] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    1.222166] pci_bus 0000:00: resource 7 [mem 0x40000000-0xafffffff window]
+[    1.222166] pci_bus 0000:00: resource 8 [mem 0xc0000000-0xfebfffff window]
+[    1.222897] pci_bus 0000:00: resource 9 [mem 0x100000000-0x8ffffffff window]
+[    1.223627] PCI: CLS 0 bytes, default 64
+[    1.227774] Trying to unpack rootfs image as initramfs...
+[    1.281771] Freeing initrd memory: 788K
+[    1.371950] Can not register tracer mmiotrace due to lockdown
+[    1.372218] Can not register tracer blk due to lockdown
+[    1.372372] blktrace: Warning: could not register the block tracer
+[    1.373698] Initialise system trusted keyrings
+[    1.375727] workingset: timestamp_bits=40 max_order=18 bucket_order=0
+[    1.385261] SGI XFS with ACLs, security attributes, realtime, quota, no debug enabled
+[    1.507617] Key type asymmetric registered
+[    1.508985] Asymmetric key parser 'x509' registered
+[    1.510688] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    1.514985] io scheduler mq-deadline registered
+[    1.514985] io scheduler kyber registered
+[    1.517388] io scheduler bfq registered
+[    1.523497] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.538389] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.575486] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    1.593767] e1000e: Intel(R) PRO/1000 Network Driver
+[    1.593792] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    1.599415] ACPI: \_SB_.GSIG: Enabled at IRQ 22
+[    1.602608] e1000e 0000:00:02.0: Interrupt Throttling Rate (ints/sec) set to dynamic conservative mode
+[    1.664611] e1000e 0000:00:02.0 0000:00:02.0 (uninitialized): registered PHC clock
+[    1.727069] e1000e 0000:00:02.0 eth0: (PCI Express:2.5GT/s:Width x1) 52:54:00:12:34:56
+[    1.727691] e1000e 0000:00:02.0 eth0: Intel(R) PRO/1000 Network Connection
+[    1.728016] e1000e 0000:00:02.0 eth0: MAC: 3, PHY: 8, PBA No: 000000-000
+[    1.730870] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    1.735816] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.736034] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.739685] mousedev: PS/2 mouse device common for all mice
+[    1.742339] rtc_cmos PNP0B00:00: RTC can wake from S4
+[    1.744424] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+[    1.747570] rtc_cmos PNP0B00:00: registered as rtc0
+[    1.748317] rtc_cmos PNP0B00:00: setting system clock to 2026-10-19T11:05:15 UTC (1792407915)
+[    1.750010] rtc_cmos PNP0B00:00: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+[    1.750717] amd_pstate: the _CPC object is not present in SBIOS or ACPI disabled
+[    1.753992] NET: Registered PF_INET6 protocol family
+[    1.763841] Segment Routing with IPv6
+[    1.763841] RPL Segment Routing with IPv6
+[    1.764573] In-situ OAM (IOAM) with IPv6
+[    1.765317] NET: Registered PF_PACKET protocol family
+[    1.770920] IPI shorthand broadcast: enabled
+[    1.801236] sched_clock: Marking stable (1749927937, 50544182)->(2195779587, -395307468)
+[    1.804464] registered taskstats version 1
+[    1.804655] Can not register tracer hwlat due to lockdown
+[    1.804829] Can not register tracer osnoise due to lockdown
+[    1.804988] osnoise: Error registering osnoise!
+[    1.807869] Loading compiled-in X.509 certificates
+[    1.827788] Loaded X.509 cert 'Build time autogenerated kernel key: 39e6d3dfb48afec77e1a5d52351757fbb09b4691'
+[    1.869732] Demotion targets for Node 0: null
+[    1.871125] Key type .fscrypt registered
+[    1.871257] Key type fscrypt-provisioning registered
+[    1.875358] PM:   Magic number: 14:132:75
+[    1.910975] clk: Disabling unused clocks
+[    1.911304] PM: genpd: Disabling unused power domains
+[    1.968721] Freeing unused decrypted memory: 2028K
+[    2.430428] Freeing unused kernel image (initmem) memory: 3636K
+[    2.430956] tsc: Refined TSC clocksource calibration: 999.992 MHz
+[    2.430974] Write protecting the kernel read-only data: 32768k
+[    2.431523] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x1cd41f163de, max_idle_ns: 881590457442 ns
+[    2.432169] clocksource: Switched to clocksource tsc
+[    2.434259] Freeing unused kernel image (text/rodata gap) memory: 72K
+[    2.436445] Freeing unused kernel image (rodata/data gap) memory: 552K
+[    2.650528] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    2.651264] Run /init as init process
+VH_BOOT_OK 6.18.57_1 x86_64 cpus=4
+VH_CMDLINE console=ttyS0 lockdown=confidentiality 
+VH_LOCKDOWN none integrity [confidentiality]
+VH_SCX_STATE disabled
+VH_SYSRQ 1
+=== state before
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=0 nr_rejected=0 root/ops=(absent)
+=== lint
+lint: struct_ops/exit: vh_exit: 24 insns, stack 24, helpers [ringbuf_output], kfuncs []
+lint: struct_ops.s/init: vh_init: 12 insns, stack 0, helpers [], kfuncs [scx_bpf_create_dsq]
+lint: struct_ops/dispatch: vh_dispatch: 13 insns, stack 0, helpers [], kfuncs [scx_bpf_dsq_move_to_local]
+lint: struct_ops/enqueue: vh_enqueue: 26 insns, stack 8, helpers [], kfuncs [scx_bpf_error_bstr scx_bpf_dsq_insert]
+lint: struct_ops/select_cpu: vh_select_cpu: 30 insns, stack 1, helpers [], kfuncs [scx_bpf_select_cpu_dfl scx_bpf_dsq_insert]
+lint: 5 programs, 105 insns, 0 errors
+=== lockdown: a program that needs bpf_probe_read_kernel must be refused
+2: (07) r1 += -8                      ; R1=fp-8
+3: (b4) w2 = 8                        ; R2=8
+4: (85) call bpf_probe_read_kernel#113
+program of this type cannot use helper bpf_probe_read_kernel#113
+processed 5 insns (limit 1000000) max_states_per_insn 0 total_states 0 peak_states 0 mark_read 0
+
+=== load 1: the scheduler under a CPU load, 4 s, stats every second (verbose: every step and the verifier logs)
+vh-sched: object /bpf/vh_sched.o: 3848 bytes; kernel BTF /sys/kernel/btf/vmlinux: 5807604 bytes; generated BTF: 659 bytes
+vh-sched: kernel BTF: 134460 types; generated BTF: 7 types, 659 bytes
+vh-sched: struct sched_ext_ops: BTF id 6822, 42 members; struct bpf_struct_ops_sched_ext_ops: id 6920, 512 bytes, data at 64
+vh-sched: BPF_BTF_LOAD: fd 3
+vh-sched: map .bss: fd 4, 80 bytes, mmapped, with BTF
+vh-sched: map .rodata: fd 5, 32 bytes, read-only, frozen, with BTF
+vh-sched: map .data: fd 6, 29 bytes, mmapped
+vh-sched: map exit_rb: fd 7, type 27, 4096 entries
+vh-sched: vh_exit: insn 4: .bss+0 (map fd 4)
+vh-sched: vh_exit: insn 18: map exit_rb (fd 7)
+vh-sched: vh_exit (exit, member 34): fd 8, 24 insns, 22 processed
+vh-sched: vh_init: insn 0: .rodata+0 (map fd 5)
+vh-sched: vh_init: insn 4: kfunc scx_bpf_create_dsq (BTF id 129814)
+vh-sched: vh_init: insn 8: .bss+0 (map fd 4)
+vh-sched: vh_init (init, member 33, sleepable): fd 9, 12 insns, 10 processed
+vh-sched: vh_dispatch: insn 1: .bss+0 (map fd 4)
+vh-sched: vh_dispatch: insn 5: .rodata+0 (map fd 5)
+vh-sched: vh_dispatch: insn 8: kfunc scx_bpf_dsq_move_to_local (BTF id 129830)
+vh-sched: vh_dispatch (dispatch, member 3): fd 10, 13 insns, 12 processed
+vh-sched: vh_enqueue: insn 3: .bss+0 (map fd 4)
+vh-sched: vh_enqueue: insn 6: .rodata+0 (map fd 5)
+vh-sched: vh_enqueue: insn 17: .data+0 (map fd 6)
+vh-sched: vh_enqueue: insn 20: kfunc scx_bpf_error_bstr (BTF id 129836)
+vh-sched: vh_enqueue: insn 24: kfunc scx_bpf_dsq_insert (BTF id 129820)
+vh-sched: vh_enqueue (enqueue, member 1): fd 11, 26 insns, 12 processed
+vh-sched: vh_select_cpu: insn 8: kfunc scx_bpf_select_cpu_dfl (BTF id 129869)
+vh-sched: vh_select_cpu: insn 10: .bss+0 (map fd 4)
+vh-sched: vh_select_cpu: insn 19: .rodata+0 (map fd 5)
+vh-sched: vh_select_cpu: insn 27: kfunc scx_bpf_dsq_insert (BTF id 129820)
+vh-sched: vh_select_cpu (select_cpu, member 0): fd 12, 30 insns, 28 processed
+vh-sched: struct_ops map: fd 13, value 512 bytes, 5 programs
+[    3.342099] sched_ext: BPF scheduler "vh_sched" enabled
+vh-sched: program vh_exit -> sched_ext_ops.exit (member 34): fd 8, 24 insns, insn_processed 22
+func#0 @0
+Live regs before insn:
+      0: .1........ (79) r1 = *(u64 *)(r1 +0)
+      1: .1........ (61) r2 = *(u32 *)(r1 +0)
+      2: .12....... (79) r3 = *(u64 *)(r1 +8)
+      3: .123...... (79) r1 = *(u64 *)(r1 +16)
+      4: .123...... (18) r4 = 0xff83e372c0076000
+      6: .1234..... (7b) *(u64 *)(r4 +72) = r1
+      7: .1234..... (7b) *(u64 *)(r10 -8) = r1
+      8: ..234..... (7b) *(u64 *)(r4 +64) = r3
+      9: ..234..... (7b) *(u64 *)(r10 -16) = r3
+     10: ..2.4..... (67) r2 <<= 32
+     11: ..2.4..... (c7) r2 s>>= 32
+     12: ..2.4..... (7b) *(u64 *)(r4 +56) = r2
+     13: ..2.4..... (7b) *(u64 *)(r10 -24) = r2
+     14: ....4..... (b7) r1 = 1
+     15: .1..4..... (db) lock *(u64 *)(r4 +48) += r1
+     16: .......... (bf) r2 = r10
+     17: ..2....... (07) r2 += -24
+     18: ..2....... (18) r1 = 0xff47db0c418fbe00
+     20: .12....... (b7) r3 = 24
+     21: .123...... (b7) r4 = 0
+     22: .1234..... (85) call bpf_ringbuf_output#130
+     23: 0......... (95) exit
+0: R1=ctx() R10=fp0
+0: (79) r1 = *(u64 *)(r1 +0)
+func 'exit' arg0 has btf_id 6888 type STRUCT 'scx_exit_info'
+1: R1=trusted_ptr_scx_exit_info()
+1: (61) r2 = *(u32 *)(r1 +0)          ; R1=trusted_ptr_scx_exit_info() R2=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff))
+2: (79) r3 = *(u64 *)(r1 +8)          ; R1=trusted_ptr_scx_exit_info() R3=scalar()
+3: (79) r1 = *(u64 *)(r1 +16)         ; R1=scalar()
+4: (18) r4 = 0xff83e372c0076000       ; R4=map_value(map=.bss,ks=4,vs=80)
+6: (7b) *(u64 *)(r4 +72) = r1         ; R1=scalar() R4=map_value(map=.bss,ks=4,vs=80)
+7: (7b) *(u64 *)(r10 -8) = r1         ; R1=scalar(id=1) R10=fp0 fp-8=scalar(id=1)
+8: (7b) *(u64 *)(r4 +64) = r3         ; R3=scalar() R4=map_value(map=.bss,ks=4,vs=80)
+9: (7b) *(u64 *)(r10 -16) = r3        ; R3=scalar(id=2) R10=fp0 fp-16=scalar(id=2)
+10: (67) r2 <<= 32                    ; R2=scalar(smax=0x7fffffff00000000,umax=0xffffffff00000000,smin32=0,smax32=umax32=0,var_off=(0x0; 0xffffffff00000000))
+11: (c7) r2 s>>= 32                   ; R2=scalar(smin=0xffffffff80000000,smax=0x7fffffff)
+12: (7b) *(u64 *)(r4 +56) = r2        ; R2=scalar(smin=0xffffffff80000000,smax=0x7fffffff) R4=map_value(map=.bss,ks=4,vs=80)
+13: (7b) *(u64 *)(r10 -24) = r2       ; R2=scalar(id=3,smin=0xffffffff80000000,smax=0x7fffffff) R10=fp0 fp-24=scalar(id=3,smin=0xffffffff80000000,smax=0x7fffffff)
+14: (b7) r1 = 1                       ; R1=1
+15: (db) lock *(u64 *)(r4 +48) += r1          ; R1=1 R4=map_value(map=.bss,ks=4,vs=80)
+16: (bf) r2 = r10                     ; R2=fp0 R10=fp0
+17: (07) r2 += -24                    ; R2=fp-24
+18: (18) r1 = 0xff47db0c418fbe00      ; R1=map_ptr(map=exit_rb,ks=0,vs=0)
+20: (b7) r3 = 24                      ; R3=24
+21: (b7) r4 = 0                       ; R4=0
+22: (85) call bpf_ringbuf_output#130
+mark_precise: frame0: last_idx 22 first_idx 0 subseq_idx -1 
+mark_precise: frame0: regs=r3 stack= before 21: (b7) r4 = 0
+mark_precise: frame0: regs=r3 stack= before 20: (b7) r3 = 24
+23: R0=scalar()
+23: (95) exit
+(0) frame 0 insn 22 +live -8,-16,-24 
+(0) frame 0 insn 13 +live -8,-16 
+(0) frame 0 insn 13 +written -24 
+(0) frame 0 insn 9 +live -8 
+(0) frame 0 insn 9 +written -16,-24 
+(0) frame 0 insn 7 +written -8,-16,-24 
+(0) frame 0 insn 0 +written -8,-16,-24 
+(0) live stack update done in 2 iterations
+processed 22 insns (limit 1000000) max_states_per_insn 0 total_states 0 peak_states 0 mark_read 0
+
+vh-sched: program vh_init -> sched_ext_ops.init (member 33, sleepable): fd 9, 12 insns, insn_processed 10
+func#0 @0
+Live regs before insn:
+      0: .......... (18) r1 = 0xff47db0c418fa938
+      2: .1........ (79) r1 = *(u64 *)(r1 +8)
+      3: .1........ (b4) w2 = -1
+      4: .12....... (85) call scx_bpf_create_dsq#129814
+      5: 0......... (bc) w1 = w0
+      6: 01........ (67) r1 <<= 32
+      7: 01........ (c7) r1 s>>= 32
+      8: 01........ (18) r2 = 0xff83e372c0076000
+     10: 012....... (7b) *(u64 *)(r2 +40) = r1
+     11: 0......... (95) exit
+0: R1=ctx() R10=fp0
+0: (18) r1 = 0xff47db0c418fa938       ; R1=map_value(map=.rodata,ks=4,vs=32)
+2: (79) r1 = *(u64 *)(r1 +8)          ; R1=0
+3: (b4) w2 = -1                       ; R2=0xffffffff
+4: (85) call scx_bpf_create_dsq#129814        ; R0=scalar()
+5: (bc) w1 = w0                       ; R0=scalar() R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff))
+6: (67) r1 <<= 32                     ; R1=scalar(smax=0x7fffffff00000000,umax=0xffffffff00000000,smin32=0,smax32=umax32=0,var_off=(0x0; 0xffffffff00000000))
+7: (c7) r1 s>>= 32                    ; R1=scalar(smin=0xffffffff80000000,smax=0x7fffffff)
+8: (18) r2 = 0xff83e372c0076000       ; R2=map_value(map=.bss,ks=4,vs=80)
+10: (7b) *(u64 *)(r2 +40) = r1        ; R1=scalar(smin=0xffffffff80000000,smax=0x7fffffff) R2=map_value(map=.bss,ks=4,vs=80)
+11: (95) exit
+processed 10 insns (limit 1000000) max_states_per_insn 0 total_states 0 peak_states 0 mark_read 0
+
+vh-sched: program vh_dispatch -> sched_ext_ops.dispatch (member 3): fd 10, 13 insns, insn_processed 12
+func#0 @0
+Live regs before insn:
+      0: .......... (b7) r6 = 1
+      1: ......6... (18) r7 = 0xff83e372c0076000
+      3: ......67.. (b7) r1 = 1
+      4: .1....67.. (db) lock *(u64 *)(r7 +24) += r1
+      5: ......67.. (18) r1 = 0xff47db0c418fa938
+      7: .1....67.. (79) r1 = *(u64 *)(r1 +8)
+      8: .1....67.. (85) call scx_bpf_dsq_move_to_local#129830
+      9: 0.....67.. (56) if w0 != 0x0 goto pc+1
+     10: 0......... (95) exit
+     11: 0.....67.. (db) lock *(u64 *)(r7 +32) += r6
+     12: 0......... (05) goto pc-3
+0: R1=ctx() R10=fp0
+0: (b7) r6 = 1                        ; R6=1
+1: (18) r7 = 0xff83e372c0076000       ; R7=map_value(map=.bss,ks=4,vs=80)
+3: (b7) r1 = 1                        ; R1=1
+4: (db) lock *(u64 *)(r7 +24) += r1   ; R1=1 R7=map_value(map=.bss,ks=4,vs=80)
+5: (18) r1 = 0xff47db0c418fa938       ; R1=map_value(map=.rodata,ks=4,vs=32)
+7: (79) r1 = *(u64 *)(r1 +8)          ; R1=0
+8: (85) call scx_bpf_dsq_move_to_local#129830         ; R0=scalar()
+9: (56) if w0 != 0x0 goto pc+1        ; R0=scalar(smax=0x7fffffff00000000,umax=0xffffffff00000000,smin32=0,smax32=umax32=0,var_off=(0x0; 0xffffffff00000000))
+10: (95) exit
+
+from 9 to 11: R0=scalar(smin=0x8000000000000001,umin=umin32=1) R6=1 R7=map_value(map=.bss,ks=4,vs=80) R10=fp0
+11: R0=scalar(smin=0x8000000000000001,umin=umin32=1) R6=1 R7=map_value(map=.bss,ks=4,vs=80) R10=fp0
+11: (db) lock *(u64 *)(r7 +32) += r6          ; R6=1 R7=map_value(map=.bss,ks=4,vs=80)
+12: (05) goto pc-3
+10: safe
+processed 12 insns (limit 1000000) max_states_per_insn 0 total_states 1 peak_states 1 mark_read 0
+
+vh-sched: program vh_enqueue -> sched_ext_ops.enqueue (member 1): fd 11, 26 insns, insn_processed 12
+func#0 @0
+Live regs before insn:
+      0: .1........ (79) r4 = *(u64 *)(r1 +8)
+      1: .1..4..... (79) r1 = *(u64 *)(r1 +0)
+      2: .1..4..... (b7) r2 = 1
+      3: .12.4..... (18) r3 = 0xff83e372c0076000
+      5: .1234..... (db) r2 = atomic64_fetch_add((u64 *)(r3 +16), r2)
+      6: .12.4..... (18) r5 = 0xff47db0c418fa938
+      8: .12.45.... (79) r3 = *(u64 *)(r5 +16)
+      9: .12345.... (15) if r3 == 0x0 goto pc+12
+     10: .12345.... (07) r2 += 1
+     11: .12345.... (1d) if r2 == r3 goto pc+1
+     12: .1..45.... (05) goto pc+9
+     13: .......... (b7) r1 = 0
+     14: .1........ (7b) *(u64 *)(r10 -8) = r1
+     15: .......... (bf) r2 = r10
+     16: ..2....... (07) r2 += -8
+     17: ..2....... (18) r1 = 0xff83e372c007e000
+     19: .12....... (b4) w3 = 8
+     20: .123...... (85) call scx_bpf_error_bstr#129836
+     21: 0......... (05) goto pc+3
+     22: .1..45.... (79) r3 = *(u64 *)(r5 +0)
+     23: .1.345.... (79) r2 = *(u64 *)(r5 +8)
+     24: .1234..... (85) call scx_bpf_dsq_insert#129820
+     25: 0......... (95) exit
+0: R1=ctx() R10=fp0
+0: (79) r4 = *(u64 *)(r1 +8)          ; R1=ctx() R4=scalar()
+1: (79) r1 = *(u64 *)(r1 +0)
+func 'enqueue' arg0 has btf_id 480 type STRUCT 'task_struct'
+2: R1=trusted_ptr_task_struct()
+2: (b7) r2 = 1                        ; R2=1
+3: (18) r3 = 0xff83e372c0076000       ; R3=map_value(map=.bss,ks=4,vs=80)
+5: (db) r2 = atomic64_fetch_add((u64 *)(r3 +16), r2)          ; R2=scalar() R3=map_value(map=.bss,ks=4,vs=80)
+6: (18) r5 = 0xff47db0c418fa938       ; R5=map_value(map=.rodata,ks=4,vs=32)
+8: (79) r3 = *(u64 *)(r5 +16)         ; R3=0 R5=map_value(map=.rodata,ks=4,vs=32)
+9: (15) if r3 == 0x0 goto pc+12
+mark_precise: frame0: last_idx 9 first_idx 0 subseq_idx -1 
+mark_precise: frame0: regs=r3 stack= before 8: (79) r3 = *(u64 *)(r5 +16)
+9: R3=0
+22: (79) r3 = *(u64 *)(r5 +0)         ; R3=0x1312d00 R5=map_value(map=.rodata,ks=4,vs=32)
+23: (79) r2 = *(u64 *)(r5 +8)         ; R2=0 R5=map_value(map=.rodata,ks=4,vs=32)
+24: (85) call scx_bpf_dsq_insert#129820       ;
+25: (95) exit
+processed 12 insns (limit 1000000) max_states_per_insn 0 total_states 1 peak_states 1 mark_read 0
+
+vh-sched: program vh_select_cpu -> sched_ext_ops.select_cpu (member 0): fd 12, 30 insns, insn_processed 28
+func#0 @0
+Live regs before insn:
+      0: .1........ (79) r3 = *(u64 *)(r1 +16)
+      1: .1.3...... (79) r6 = *(u64 *)(r1 +0)
+      2: .1.3..6... (79) r2 = *(u64 *)(r1 +8)
+      3: ..23..6... (b4) w1 = 0
+      4: .123..6... (73) *(u8 *)(r10 -1) = r1
+      5: ..23..6... (bf) r4 = r10
+      6: ..234.6... (07) r4 += -1
+      7: ..234.6... (bf) r1 = r6
+      8: .1234.6... (85) call scx_bpf_select_cpu_dfl#129869
+      9: 0.....6... (b7) r1 = 1
+     10: 01....6... (18) r2 = 0xff83e372c0076000
+     12: 012...6... (b7) r3 = 1
+     13: 0123..6... (db) lock *(u64 *)(r2 +0) += r3
+     14: 012...6... (71) r3 = *(u8 *)(r10 -1)
+     15: 0123..6... (54) w3 &= 1
+     16: 0123..6... (56) if w3 != 0x0 goto pc+1
+     17: 0......... (95) exit
+     18: 012...6... (db) lock *(u64 *)(r2 +8) += r1
+     19: 0.....6... (18) r1 = 0xff47db0c418fa938
+     21: 01....6... (79) r3 = *(u64 *)(r1 +0)
+     22: 0..3..6... (bf) r1 = r6
+     23: 01.3...... (18) r2 = 0x8000000000000002
+     25: 0123...... (b7) r4 = 0
+     26: 01234..... (bc) w6 = w0
+     27: .1234.6... (85) call scx_bpf_dsq_insert#129820
+     28: ......6... (bc) w0 = w6
+     29: 0......... (05) goto pc-13
+0: R1=ctx() R10=fp0
+0: (79) r3 = *(u64 *)(r1 +16)         ; R1=ctx() R3=scalar()
+1: (79) r6 = *(u64 *)(r1 +0)
+func 'select_cpu' arg0 has btf_id 480 type STRUCT 'task_struct'
+2: R1=ctx() R6=trusted_ptr_task_struct()
+2: (79) r2 = *(u64 *)(r1 +8)          ; R1=ctx() R2=scalar()
+3: (b4) w1 = 0                        ; R1=0
+4: (73) *(u8 *)(r10 -1) = r1
+mark_precise: frame0: last_idx 4 first_idx 0 subseq_idx -1 
+mark_precise: frame0: regs=r1 stack= before 3: (b4) w1 = 0
+5: R1=0 R10=fp0 fp-8=0???????
+5: (bf) r4 = r10                      ; R4=fp0 R10=fp0
+6: (07) r4 += -1                      ; R4=fp-1
+7: (bf) r1 = r6                       ; R1=trusted_ptr_task_struct() R6=trusted_ptr_task_struct()
+8: (85) call scx_bpf_select_cpu_dfl#129869    ; R0=scalar()
+9: (b7) r1 = 1                        ; R1=1
+10: (18) r2 = 0xff83e372c0076000      ; R2=map_value(map=.bss,ks=4,vs=80)
+12: (b7) r3 = 1                       ; R3=1
+13: (db) lock *(u64 *)(r2 +0) += r3   ; R2=map_value(map=.bss,ks=4,vs=80) R3=1
+14: (71) r3 = *(u8 *)(r10 -1)         ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff)) R10=fp0 fp-8=m???????
+15: (54) w3 &= 1                      ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=1,var_off=(0x0; 0x1))
+16: (56) if w3 != 0x0 goto pc+1       ; R3=0
+17: (95) exit
+(0) frame 0 insn 14 +live -8 
+(0) frame 0 insn 9 +live -8 
+(0) frame 0 insn 8 +live -8 
+(0) frame 0 insn 0 +live -8 
+(0) live stack update done in 2 iterations
+
+from 16 to 18: R0=scalar() R1=1 R2=map_value(map=.bss,ks=4,vs=80) R3=1 R6=trusted_ptr_task_struct() R10=fp0 fp-8=m???????
+18: R0=scalar() R1=1 R2=map_value(map=.bss,ks=4,vs=80) R3=1 R6=trusted_ptr_task_struct() R10=fp0 fp-8=m???????
+18: (db) lock *(u64 *)(r2 +8) += r1   ; R1=1 R2=map_value(map=.bss,ks=4,vs=80)
+19: (18) r1 = 0xff47db0c418fa938      ; R1=map_value(map=.rodata,ks=4,vs=32)
+21: (79) r3 = *(u64 *)(r1 +0)         ; R1=map_value(map=.rodata,ks=4,vs=32) R3=0x1312d00
+22: (bf) r1 = r6                      ; R1=trusted_ptr_task_struct() R6=trusted_ptr_task_struct()
+23: (18) r2 = 0x8000000000000002      ; R2=0x8000000000000002
+25: (b7) r4 = 0                       ; R4=0
+26: (bc) w6 = w0                      ; R0=scalar() R6=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff))
+27: (85) call scx_bpf_dsq_insert#129820       ;
+28: (bc) w0 = w6                      ; R0=scalar(id=1,smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R6=scalar(id=1,smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff))
+29: (05) goto pc-13
+17: safe
+processed 28 insns (limit 1000000) max_states_per_insn 0 total_states 2 peak_states 2 mark_read 0
+
+vh-sched: loaded in 181 ms: 5 programs, insn_processed 84 in all, link fd 14
+vh-sched: link: type 9 (struct_ops = 9), id 1, map id 6
+vh-sched: sched_ext: state=enabled switch_all=1 enable_seq=1 nr_rejected=0 root/ops=vh_sched
+stats: nr_select=28 nr_direct=28 nr_enqueue=10 nr_dispatch=141 nr_dispatch_hit=10 init_rc=0 exit_seq=0 exit_kind=0 exit_code=0 exit_flags=0
+stats: nr_select=43 nr_direct=43 nr_enqueue=22 nr_dispatch=260 nr_dispatch_hit=22 init_rc=0 exit_seq=0 exit_kind=0 exit_code=0 exit_flags=0
+stats: nr_select=57 nr_direct=57 nr_enqueue=30 nr_dispatch=381 nr_dispatch_hit=30 init_rc=0 exit_seq=0 exit_kind=0 exit_code=0 exit_flags=0
+stats: nr_select=78 nr_direct=78 nr_enqueue=35 nr_dispatch=505 nr_dispatch_hit=35 init_rc=0 exit_seq=0 exit_kind=0 exit_code=0 exit_flags=0
+stats: nr_select=78 nr_direct=78 nr_enqueue=36 nr_dispatch=505 nr_dispatch_hit=35 init_rc=0 exit_seq=0 exit_kind=0 exit_code=0 exit_flags=0
+vh-sched: sched_ext: state=enabled switch_all=1 enable_seq=1 nr_rejected=0 root/ops=vh_sched
+vh-sched: no exit record while the link was held; link fd poll revents 0x0
+[    7.442173] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+vh-sched: link closed
+vh-sched: exit record after close: kind 64 (SCX_EXIT_UNREG), exit_code 0, flags 0x1
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=1 nr_rejected=0 root/ops=(absent)
+=== load 2: an error raised from BPF at the 20th enqueue (cfg.fail_after through the frozen .rodata)
+vh-sched: object /bpf/vh_sched.o: 3848 bytes; kernel BTF /sys/kernel/btf/vmlinux: 5807604 bytes; generated BTF: 659 bytes
+[    7.735305] sched_ext: BPF scheduler "vh_sched" enabled
+vh-sched: program vh_exit -> sched_ext_ops.exit (member 34): fd 8, 24 insns, insn_processed 22
+vh-sched: program vh_init -> sched_ext_ops.init (member 33, sleepable): fd 9, 12 insns, insn_processed 10
+vh-sched: program vh_dispatch -> sched_ext_ops.dispatch (member 3): fd 10, 13 insns, insn_processed 12
+vh-sched: program vh_enqueue -> sched_ext_ops.enqueue (member 1): fd 11, 26 insns, insn_processed 24
+vh-sched: program vh_select_cpu -> sched_ext_ops.select_cpu (member 0): fd 12, 30 insns, insn_processed 28
+vh-sched: loaded in 145 ms: 5 programs, insn_processed 96 in all, link fd 14
+vh-sched: link: type 9 (struct_ops = 9), id 2, map id 11
+vh-sched: sched_ext: state=enabled switch_all=1 enable_seq=2 nr_rejected=0 root/ops=vh_sched
+[   10.281406] sched_ext: BPF scheduler "vh_sched" disabled (scx_bpf_error)
+[   10.281752] sched_ext: vh_sched: vh_sched: fail_after reached
+[   10.285024]    scx_bpf_error_bstr+0x7e/0xa0
+[   10.285216]    bpf_prog_9a30995f2b0aaf58_vh_enqueue+0x77/0x88
+[   10.285378]    bpf__sched_ext_ops_enqueue+0x4b/0xa7
+[   10.285509]    do_enqueue_task+0x248/0x600
+[   10.285620]    enqueue_task_scx+0x23a/0x390
+[   10.285730]    enqueue_task+0x3f/0x200
+[   10.285833]    ttwu_do_activate+0x9a/0x260
+[   10.285941]    try_to_wake_up+0x325/0x6c0
+[   10.286046]    kick_pool+0xa7/0x130
+[   10.286141]    __queue_work+0x3b9/0x520
+[   10.286242]    call_timer_fn+0x2e/0x160
+[   10.286347]    __run_timer_base+0x20d/0x280
+[   10.286503]    run_timer_softirq+0x5a/0x70
+[   10.286619]    handle_softirqs+0xf6/0x2f0
+[   10.286728]    __irq_exit_rcu+0x58/0x150
+[   10.286835]    sysvec_apic_timer_interrupt+0xa4/0xc0
+[   10.286965]    asm_sysvec_apic_timer_interrupt+0x1a/0x20
+[   10.287101]    pv_native_safe_halt+0x13/0x20
+[   10.287212]    default_idle+0x9/0x20
+[   10.287315]    default_idle_call+0x3a/0x70
+[   10.287422]    do_idle+0x1ad/0x2f0
+[   10.287517]    cpu_startup_entry+0x2a/0x30
+[   10.287624]    rest_init+0xc4/0xd0
+[   10.287717]    start_kernel+0x3c0/0x400
+[   10.287822]    x86_64_start_reservations+0x24/0x30
+[   10.287944]    x86_64_start_kernel+0xbe/0xc0
+[   10.288138]    common_startup_64+0x13e/0x140
+vh-sched: exit record from the ring buffer at 2547 ms: kind 1025 (SCX_EXIT_ERROR_BPF), exit_code 0, flags 0x1
+stats: nr_select=49 nr_direct=49 nr_enqueue=20 nr_dispatch=200 nr_dispatch_hit=19 init_rc=0 exit_seq=1 exit_kind=1025 exit_code=0 exit_flags=1
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=2 nr_rejected=0 root/ops=(absent)
+vh-sched: link closed
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=2 nr_rejected=0 root/ops=(absent)
+=== load 3: sysrq S after 2 s with kernel.sysrq=256 (the RTNICE group that holds the sched_ext keys)
+vh-sched: object /bpf/vh_sched.o: 3848 bytes; kernel BTF /sys/kernel/btf/vmlinux: 5807604 bytes; generated BTF: 659 bytes
+[   18.633982] sched_ext: BPF scheduler "vh_sched" enabled
+vh-sched: program vh_exit -> sched_ext_ops.exit (member 34): fd 8, 24 insns, insn_processed 22
+vh-sched: program vh_init -> sched_ext_ops.init (member 33, sleepable): fd 9, 12 insns, insn_processed 10
+vh-sched: program vh_dispatch -> sched_ext_ops.dispatch (member 3): fd 10, 13 insns, insn_processed 12
+vh-sched: program vh_enqueue -> sched_ext_ops.enqueue (member 1): fd 11, 26 insns, insn_processed 12
+vh-sched: program vh_select_cpu -> sched_ext_ops.select_cpu (member 0): fd 12, 30 insns, insn_processed 28
+vh-sched: loaded in 143 ms: 5 programs, insn_processed 84 in all, link fd 14
+vh-sched: link: type 9 (struct_ops = 9), id 3, map id 16
+vh-sched: sched_ext: state=enabled switch_all=1 enable_seq=3 nr_rejected=0 root/ops=vh_sched
+[   21.670138] sysrq: Disable sched_ext and revert all tasks to CFS
+vh-sched: sysrq S written: yes (kernel.sysrq = 256)
+[   21.713386] sched_ext: BPF scheduler "vh_sched" disabled (disabled by sysrq-S)
+vh-sched: exit record from the ring buffer at 3073 ms: kind 67 (SCX_EXIT_SYSRQ), exit_code 0, flags 0x1
+stats: nr_select=57 nr_direct=57 nr_enqueue=14 nr_dispatch=101 nr_dispatch_hit=13 init_rc=0 exit_seq=1 exit_kind=67 exit_code=0 exit_flags=1
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=3 nr_rejected=0 root/ops=(absent)
+vh-sched: link closed
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=3 nr_rejected=0 root/ops=(absent)
+=== load 4: BPF_LINK_DETACH after 2 s (does the link fd report EPOLLHUP?)
+vh-sched: object /bpf/vh_sched.o: 3848 bytes; kernel BTF /sys/kernel/btf/vmlinux: 5807604 bytes; generated BTF: 659 bytes
+[   27.147395] sched_ext: BPF scheduler "vh_sched" enabled
+vh-sched: program vh_exit -> sched_ext_ops.exit (member 34): fd 8, 24 insns, insn_processed 22
+vh-sched: program vh_init -> sched_ext_ops.init (member 33, sleepable): fd 9, 12 insns, insn_processed 10
+vh-sched: program vh_dispatch -> sched_ext_ops.dispatch (member 3): fd 10, 13 insns, insn_processed 12
+vh-sched: program vh_enqueue -> sched_ext_ops.enqueue (member 1): fd 11, 26 insns, insn_processed 12
+vh-sched: program vh_select_cpu -> sched_ext_ops.select_cpu (member 0): fd 12, 30 insns, insn_processed 28
+vh-sched: loaded in 146 ms: 5 programs, insn_processed 84 in all, link fd 14
+vh-sched: link: type 9 (struct_ops = 9), id 4, map id 21
+vh-sched: sched_ext: state=enabled switch_all=1 enable_seq=4 nr_rejected=0 root/ops=vh_sched
+[   30.233485] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+vh-sched: BPF_LINK_DETACH at 3075 ms: ok
+vh-sched: link fd: poll revents 0x10 HUP at 3076 ms
+vh-sched: exit record from the ring buffer at 3077 ms: kind 64 (SCX_EXIT_UNREG), exit_code 0, flags 0x1
+stats: nr_select=59 nr_direct=59 nr_enqueue=13 nr_dispatch=103 nr_dispatch_hit=13 init_rc=0 exit_seq=1 exit_kind=64 exit_code=0 exit_flags=1
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=4 nr_rejected=0 root/ops=(absent)
+vh-sched: link closed
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=4 nr_rejected=0 root/ops=(absent)
+=== load 5: 30 load/unload cycles
+[   35.662368] sched_ext: BPF scheduler "vh_sched" enabled
+[   35.703860] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   35.976892] sched_ext: BPF scheduler "vh_sched" enabled
+[   36.023088] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   36.307095] sched_ext: BPF scheduler "vh_sched" enabled
+[   36.359409] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   36.650594] sched_ext: BPF scheduler "vh_sched" enabled
+[   36.697673] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   36.973657] sched_ext: BPF scheduler "vh_sched" enabled
+[   37.013952] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   37.278329] sched_ext: BPF scheduler "vh_sched" enabled
+[   37.323915] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   37.597306] sched_ext: BPF scheduler "vh_sched" enabled
+[   37.647381] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   37.926938] sched_ext: BPF scheduler "vh_sched" enabled
+[   37.974827] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   38.252232] sched_ext: BPF scheduler "vh_sched" enabled
+[   38.295167] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   38.562545] sched_ext: BPF scheduler "vh_sched" enabled
+[   38.605897] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   38.868090] sched_ext: BPF scheduler "vh_sched" enabled
+[   38.912990] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   39.176392] sched_ext: BPF scheduler "vh_sched" enabled
+[   39.220058] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   39.480755] sched_ext: BPF scheduler "vh_sched" enabled
+[   39.522993] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   39.790691] sched_ext: BPF scheduler "vh_sched" enabled
+[   39.833197] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   40.102641] sched_ext: BPF scheduler "vh_sched" enabled
+[   40.148496] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   40.417162] sched_ext: BPF scheduler "vh_sched" enabled
+[   40.461662] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   40.727164] sched_ext: BPF scheduler "vh_sched" enabled
+[   40.773926] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.039473] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.085580] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.348951] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.398778] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.674185] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.717188] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.981066] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.022996] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.287043] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.343355] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.605558] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.650869] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.912633] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.959951] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.239462] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.279376] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.544636] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.588394] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.858511] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.909894] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.175988] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.220827] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.485908] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.536004] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.796929] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.840195] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+cycles: 30, failures: 0
+vh-sched: sched_ext: state=disabled switch_all=0 enable_seq=34 nr_rejected=0 root/ops=(absent)
+=== dmesg (sched_ext)
+[   40.417162] sched_ext: BPF scheduler "vh_sched" enabled
+[   40.461662] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   40.727164] sched_ext: BPF scheduler "vh_sched" enabled
+[   40.773926] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.039473] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.085580] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.348951] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.398778] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.674185] sched_ext: BPF scheduler "vh_sched" enabled
+[   41.717188] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   41.981066] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.022996] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.287043] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.343355] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.605558] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.650869] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   42.912633] sched_ext: BPF scheduler "vh_sched" enabled
+[   42.959951] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.239462] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.279376] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.544636] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.588394] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   43.858511] sched_ext: BPF scheduler "vh_sched" enabled
+[   43.909894] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.175988] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.220827] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.485908] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.536004] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+[   44.796929] sched_ext: BPF scheduler "vh_sched" enabled
+[   44.840195] sched_ext: BPF scheduler "vh_sched" disabled (unregistered from user space)
+VH_TEST_EXIT 0
+VH_DONE
+[   44.920298] e1000e: EEE TX LPI TIMER: 00000000
+[   44.925808] ACPI: PM: Preparing to enter system sleep state S5
+[   44.927138] reboot: Power down
